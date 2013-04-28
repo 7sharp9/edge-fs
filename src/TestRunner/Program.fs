@@ -5,7 +5,7 @@ open FsUnit
    
 let [<Test>]``Compiler to lambda test``() =                  
     let ec = EdgeCompiler()
-    let parameters = dict ["typeName", "EdgeFs.Startup" :> obj
+    let parameters = dict ["typeName", "Startup" :> obj
                            "methodName", "Invoke" :> obj                          
                            "source", """fun input -> async{return ".NET welcomes " + input.ToString()}""" :> obj]
     let norman = ec.CompileFunc parameters
@@ -15,9 +15,9 @@ let [<Test>]``Compiler to lambda test``() =
     
 let [<Test>] ``Compiler to .fs file test``() =
     let ec = EdgeCompiler()    
-    let parameters = dict ["typeName", "EdgeFs.Startup" :> obj
+    let parameters = dict ["typeName", "Startup" :> obj
                            "methodName", "Invoke" :> obj                          
-                           "source", "/Users/dave/code/compilertesting/runner/addSeven.fs" :> obj]
+                           "source", "../../addSeven.fs" :> obj]
     let norman = ec.CompileFunc parameters
     let result = norman.Invoke(3)
     result.Wait()
