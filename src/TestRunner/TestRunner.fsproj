@@ -35,11 +35,14 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="FsCheck">
+      <HintPath>..\packages\FsCheck.0.8.3.0\lib\net40-Client\FsCheck.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="FsUnit.NUnit">
-      <HintPath>..\edge-fs\packages\FsUnit.1.2.1.0\lib\Net40\FsUnit.NUnit.dll</HintPath>
+      <HintPath>..\packages\FsUnit.1.1.1.0\lib\Net40\FsUnit.NUnit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
