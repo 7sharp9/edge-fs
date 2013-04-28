@@ -1,0 +1,24 @@
+{
+  "name": "edge-fs",
+  "author": {
+    "name": "Dave Thomas <kukulcanenator@googlemail.com>",
+    "url": "http://7sharpnine.com",
+    "twitter": "7sharp9"
+  },
+  "version": "0.1.0-pre",
+  "description": "Edge-fs: run F# and node.js code in-process with edge.js",
+  "tags" : ["edge", "edgejs", "net", "clr", "F#", "managed", ".net", "node.js", "node"],
+  "main": "./lib/edge-fs.js",
+  "engines": { "node": ">= 0.6" },
+  "licenses": [ { "type": "Apache", "url": "http://www.apache.org/licenses/LICENSE-2.0" } ],
+  "dependencies": {
+  },
+  "homepage": "http://tjanczuk.github.com/edge",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:7sharp9/edge-fs.git"
+  },
+  "bugs" : {
+    "url" : "http://github.com/7sharp9/edge-fs/issues"
+  }
+}
