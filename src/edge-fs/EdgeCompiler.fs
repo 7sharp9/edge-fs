@@ -28,8 +28,7 @@ type EdgeCompiler() =
         let fileName = writeSourceToDisk source
         let sscs = SimpleSourceCodeServices()
         let errors, result, ass =
-            let parameters = [| yield![| "--use-incremental-build"
-                                         "--nologo"
+            let parameters = [| yield![| "--nologo"
                                          "--target:library"
                                          sprintf "-o:%s"  <| Path.ChangeExtension(fileName, "dll")
                                          "--noframework" |]
