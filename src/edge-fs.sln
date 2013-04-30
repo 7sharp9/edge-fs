@@ -31,6 +31,6 @@ Global
 		{E65DDBEB-0876-4053-859D-A9FD143A8805}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = edge-fs.fsproj
+		StartupItem = TestRunner\TestRunner.fsproj
 	EndGlobalSection
 EndGlobal
