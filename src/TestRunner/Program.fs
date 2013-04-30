@@ -1,5 +1,6 @@
 module runner.Main
 open System
+open System.Diagnostics
 open NUnit.Framework
 open FsUnit
    
@@ -22,12 +23,22 @@ let [<Test>] ``Compiler to .fs file test``() =
     let result = norman.Invoke(3)
     result.Wait()
     result.Result :?> int |> should equal 10
-                                   
+    
+type Stopwatch with member x.StartWithReset = x.Reset >> x.Start
+                    member x.StopAndPrint() = x.Stop(); printfn "%fms" x.Elapsed.TotalMilliseconds
+                            
 [<EntryPoint>]
 let main args = 
-
+    
+    
+    let sw = Stopwatch.StartNew()
+    
     do ``Compiler to lambda test``()
+    sw.StopAndPrint()
+    
+    sw.StartWithReset()
     do ``Compiler to .fs file test``()
+    sw.StopAndPrint()
     
     Console.ReadLine() |> ignore
     0
