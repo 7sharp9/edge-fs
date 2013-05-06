@@ -27,6 +27,6 @@ It should be pretty easy to get going on Windows: (From memory:)
        console.log(result);
    });
 ```
-8. test with ```node testfile.js```
+8. Test with ```node testfile.js```
 
-Ill be writing more documentation as time permits.  
+Ill be writing more documentation over time, as well as deploying a live npm package.  
