@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Build">
-      <HintPath>$(MSBuildExtensionsPath32)\..\4.5\FSharp.Build.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Microsoft F#\v4.0\FSharp.Build.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
