@@ -1,5 +1,5 @@
 namespace global
-//#r "/Library/Frameworks/Mono.framework/Versions/3.0.10/lib/mono/4.0/System.Core.dll"
+//#r "System.Core"
 open System.Threading.Tasks
 type Startup() =
     let addSeven v =  
