@@ -4,7 +4,7 @@ open System.Diagnostics
 open NUnit.Framework
 open FsUnit
    
-let [<Test>]``Compiler to lambda test``() =                  
+let [<Test>]``Compiler with lambda test``() =                  
     let ec = EdgeCompiler()
     let parameters = dict ["typeName", "Startup" :> obj
                            "methodName", "Invoke" :> obj                          
@@ -14,7 +14,7 @@ let [<Test>]``Compiler to lambda test``() =
     result.Wait()
     result.Result :?> String |> should equal ".NET welcomes JavaScript via F#"
     
-let [<Test>] ``Compiler to .fs file test``() =
+let [<Test>] ``Compiler with .fs file test``() =
     let ec = EdgeCompiler()    
     let parameters = dict ["typeName", "Startup" :> obj
                            "methodName", "Invoke" :> obj                          
@@ -25,20 +25,21 @@ let [<Test>] ``Compiler to .fs file test``() =
     result.Result :?> int |> should equal 10
     
 type Stopwatch with member x.StartWithReset = x.Reset >> x.Start
-                    member x.StopAndPrint() = x.Stop(); printfn "%fms" x.Elapsed.TotalMilliseconds
+                    member x.StopAndPrint(title) = x.Stop()
+                                                   Console.WriteLine( "{0}: {1}ms", title, x.Elapsed.TotalMilliseconds)
                             
 [<EntryPoint>]
 let main args = 
-    
-    
+
     let sw = Stopwatch.StartNew()
     
-    do ``Compiler to lambda test``()
-    sw.StopAndPrint()
-    
-    sw.StartWithReset()
-    do ``Compiler to .fs file test``()
-    sw.StopAndPrint()
+    for i in 1..2 do
+        ``Compiler with lambda test``()
+        sw.StopAndPrint("Compiler with lambda")
+
+        sw.StartWithReset()
+        ``Compiler with .fs file test``()
+        sw.StopAndPrint("Compiler with .fs file")
     
     Console.ReadLine() |> ignore
     0
