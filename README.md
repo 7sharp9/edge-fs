@@ -1,1 +1,2 @@
-Im no longer maintaining this.  If anyone is interested in using it ping me and Ill se about updating the backend to bring it into working condition again.
+## Note
+This repo is no longer maintained, if anyone is interested in ressurectibg this the current F# compiler has some etter API's since this was developed.  If anyone is interested in this again ping me and I'll see if I can find time for a better implemention.
